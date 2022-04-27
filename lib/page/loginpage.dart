@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/BlocEvent/LoginEvent.dart';
 import '../mainBody.dart';
+import '../widget/common/ComInputText.dart';
+import '../data/global.dart';
 
 class LoginPageWidget extends StatelessWidget {
   const LoginPageWidget({Key? key}) : super(key: key);
@@ -25,13 +27,13 @@ class LoginPageWidget extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
                   Container(
                     height: 100,
                     // width: 300,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       // color: Colors.red,
                       image: DecorationImage(
                         image: AssetImage("assets/images/logo_tpk.png"),
@@ -39,71 +41,98 @@ class LoginPageWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   SizedBox(
                     height: 40,
-                    child: TextFormField(
-                      onChanged: (value) {},
-                      initialValue: "",
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.all(8),
-                        hintText: 'TPK ID',
-                        hintStyle: TextStyle(
-                          fontFamily: 'Mitr',
-                          color: Color(0xffb2b2b2),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w300,
-                          fontStyle: FontStyle.normal,
-                          letterSpacing: 0,
-                        ),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.red, width: 1),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        // suffixIcon: Icon(
-                        //   Icons.search,
-                        // ),
-                      ),
+                    // child: TextFormField(
+                    //   onChanged: (value) {},
+                    //   initialValue: "",
+                    //   decoration: InputDecoration(
+                    //     contentPadding: EdgeInsets.all(8),
+                    //     hintText: 'TPK ID',
+                    //     hintStyle: const TextStyle(
+                    //       fontFamily: 'Mitr',
+                    //       color: Color(0xffb2b2b2),
+                    //       fontSize: 14,
+                    //       fontWeight: FontWeight.w300,
+                    //       fontStyle: FontStyle.normal,
+                    //       letterSpacing: 0,
+                    //     ),
+                    //     border: OutlineInputBorder(
+                    //       borderSide:
+                    //           const BorderSide(color: Colors.red, width: 1),
+                    //       borderRadius: BorderRadius.circular(8),
+                    //     ),
+                    //     // suffixIcon: Icon(
+                    //     //   Icons.search,
+                    //     // ),
+                    //   ),
+                    // ),
+                    child: ComInputText(
+                      height: 40,
+                      width: 240,
+                      isContr: logindata.isControl,
+                      fnContr: (input) {
+                        logindata.isControl = input;
+                      },
+                      sValue: logindata.userID,
+                      returnfunc: (String s) {
+                        logindata.userID = s;
+                      },
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   SizedBox(
                     height: 40,
-                    child: TextFormField(
-                      onChanged: (value) {},
-                      obscureText: true,
-                      initialValue: "",
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.all(8),
-                        hintText: 'Password',
-                        hintStyle: TextStyle(
-                          fontFamily: 'Mitr',
-                          color: Color(0xffb2b2b2),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w300,
-                          fontStyle: FontStyle.normal,
-                          letterSpacing: 0,
-                        ),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.red, width: 1),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
+                    // child: TextFormField(
+                    //   onChanged: (value) {},
+                    //   obscureText: true,
+                    //   initialValue: "",
+                    //   decoration: InputDecoration(
+                    //     contentPadding: EdgeInsets.all(8),
+                    //     hintText: 'Password',
+                    //     hintStyle: const TextStyle(
+                    //       fontFamily: 'Mitr',
+                    //       color: Color(0xffb2b2b2),
+                    //       fontSize: 14,
+                    //       fontWeight: FontWeight.w300,
+                    //       fontStyle: FontStyle.normal,
+                    //       letterSpacing: 0,
+                    //     ),
+                    //     border: OutlineInputBorder(
+                    //       borderSide:
+                    //           const BorderSide(color: Colors.red, width: 1),
+                    //       borderRadius: BorderRadius.circular(8),
+                    //     ),
 
-                        // suffixIcon: Icon(
-                        //   Icons.search,
-                        // ),
-                      ),
+                    //     // suffixIcon: Icon(
+                    //     //   Icons.search,
+                    //     // ),
+                    //   ),
+                    // ),
+                    child: ComInputText(
+                      height: 40,
+                      width: 240,
+                      isPassword: true,
+                      isContr: logindata.isControl,
+                      fnContr: (input) {
+                        logindata.isControl = input;
+                      },
+                      sValue: logindata.userPASS,
+                      returnfunc: (String s) {
+                        logindata.userPASS = s;
+                      },
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  _LoginSignin(),
-                  SizedBox(
+                  const _LoginSignin(),
+                  const SizedBox(
                     height: 50,
                   ),
                 ],

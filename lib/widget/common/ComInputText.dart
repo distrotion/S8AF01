@@ -215,12 +215,14 @@ class _ComInputTextState extends State<ComInputText> {
             padding: const EdgeInsets.only(
                 right: 12.0, left: 12, top: 8.0, bottom: 8.0),
             child: Container(
-                height: widget.iconheight ?? 24,
-                width: widget.iconwidth ?? 24,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage(getShowHidePassword_ImgPath()),
-                        fit: BoxFit.fitHeight))),
+              height: widget.iconheight ?? 24,
+              width: widget.iconwidth ?? 24,
+              // decoration: BoxDecoration(
+              //   image: DecorationImage(
+              //       image: AssetImage(getShowHidePassword_ImgPath()),
+              //       fit: BoxFit.fitHeight),
+              // ),
+            ),
           ),
         );
         /*} else if (widget.isEmail && !_isHideIconOnFocus) {
@@ -285,7 +287,8 @@ class _ComInputTextState extends State<ComInputText> {
           style: TxtStyle(fontSize: widget.nFontSize),
           inputFormatters: [
             LengthLimitingTextInputFormatter(widget.nLimitedChar),
-            if (_isEnabled == false) FilteringTextInputFormatter.digitsOnly,
+            if (widget.isNumberOnly == true)
+              FilteringTextInputFormatter.allow(RegExp(r'^\d+\.?\d{0,3}')),
           ],
           decoration: InputDecoration(
             hintText: widget.sPlaceholder,

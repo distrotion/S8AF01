@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 //---------------------------------------------------------
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../bloc/BlocEvent/02-register.dart';
 import '../bloc/cubit/NotificationEvent.dart';
 import '../widget/common/ComInputText.dart';
 import 'page0.dart';
@@ -10,155 +11,144 @@ import '../data/global.dart';
 
 //---------------------------------------------------------
 
-bool iscontext = false;
-String dataSTR01 = '';
+bool isPOINPUT = false;
+String POINPUT = '';
 
 class Page1 extends StatelessWidget {
   const Page1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Page1Body();
+    return Page1BlocBody();
+  }
+}
+
+class Page1BlocBody extends StatelessWidget {
+  /// {@macro counter_page}
+  const Page1BlocBody({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+        create: (_) => RegisterPOID_Bloc(),
+        child: BlocBuilder<RegisterPOID_Bloc, int>(
+          builder: (context, data) {
+            return Page1Body(
+              data: data,
+            );
+          },
+        ));
   }
 }
 
 class Page1Body extends StatelessWidget {
-  const Page1Body({Key? key}) : super(key: key);
-
+  Page1Body({Key? key, this.data}) : super(key: key);
+  int? data;
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        height: 100,
-        width: 100,
-        color: Colors.blue,
-        child: const Text("PAGE 1"),
-      ),
+    return RegisterBox(
+      data: data,
     );
   }
 }
 
-class Page1BodyT2 extends StatefulWidget {
-  const Page1BodyT2({Key? key}) : super(key: key);
-
-  @override
-  State<Page1BodyT2> createState() => _Page1BodyT2State();
-}
-
-class _Page1BodyT2State extends State<Page1BodyT2> {
+class RegisterBox extends StatelessWidget {
+  RegisterBox({Key? key, this.data}) : super(key: key);
+  int? data;
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        height: 64,
-        width: 500,
-        // color: Colors.blue,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ComInputText(
-              sLabel: "test",
-              height: 40,
-              isContr: iscontext,
-              fnContr: (input) {
-                setState(() {
-                  iscontext = input;
-                });
-              },
-              sValue: dataSTR01,
-              returnfunc: (String s) {
-                dataSTR01 = s;
-              },
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                height: 40,
-                child: ElevatedButton(
-                  onPressed: () {
-                    // print(dataSTR01);
-
-                    setState(() {
-                      iscontext = true;
-                      dataSTR01 = '';
-                      //
-                    });
-                    // iscontext = false;
-                  },
-                  child: Text(dataSTR01),
+        height: 400,
+        width: 350,
+        child: SingleChildScrollView(
+            child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.0),
+          ),
+          child: Padding(
+            padding: const EdgeInsetsDirectional.only(start: 50, end: 50),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 50,
                 ),
-              ),
-            )
-          ],
-        ),
+                SizedBox(
+                  height: 40,
+                  width: 350,
+                  child: ComInputText(
+                    nLimitedChar: 18,
+                    height: 40,
+                    width: 350,
+                    isContr: isPOINPUT,
+                    fnContr: (input) {
+                      isPOINPUT = input;
+                    },
+                    sValue: POINPUT,
+                    returnfunc: (String s) {
+                      POINPUT = s;
+                    },
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                _RegisterButton(
+                  data: data,
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+              ],
+            ),
+          ),
+        )),
       ),
     );
   }
 }
 
-class testbody extends StatefulWidget {
-  // const testbody({Key? key}) : super(key: key);
-  @override
-  _testbodyState createState() => _testbodyState();
-}
-
-class _testbodyState extends State<testbody> {
-  int x = 0;
-
+class _RegisterButton extends StatelessWidget {
+  _RegisterButton({Key? key, this.data}) : super(key: key);
+  int? data;
   @override
   Widget build(BuildContext context) {
-    Container subpage1 = Container(
-      height: 200,
-      width: 200,
-      color: Colors.red,
-    );
-    Container subpage2 = Container(
-      height: 200,
-      width: 200,
-      color: Colors.pink,
-    );
-    Container subpage3 = Container(
-      height: 200,
-      width: 200,
-      color: Colors.orange,
-    );
-    Container out;
-    if (x == 0) {
-      out = subpage1;
-    } else if (x == 1) {
-      out = subpage2;
-    } else {
-      out = subpage3;
+    if (data == 2) {
+      BlocProvider.of<BlocNotification>(contextGB).UpdateNotification(
+          "Success", "Register Success", enumNotificationlist.Success);
+    } else if (data == 1) {
+      BlocProvider.of<BlocNotification>(contextGB).UpdateNotification(
+          "Success", "POID have existed", enumNotificationlist.Warning);
     }
-
-    return Column(
-      children: [
-        Row(
-          children: [
-            InkWell(
-              onTap: () {},
-              child: Container(
-                height: 25,
-                width: 100,
-                color: Colors.black,
+    return InkWell(
+        onTap: () {
+          if (POINPUT.length == 18) {
+            //
+            context.read<RegisterPOID_Bloc>().add(RegisterPOID_Pressed());
+            //
+          }
+        },
+        child: Container(
+          height: 40,
+          decoration: BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: const Align(
+            alignment: Alignment.center,
+            child: Text(
+              "Register",
+              style: TextStyle(
+                fontFamily: 'Mitr',
+                color: Colors.white,
+                fontSize: 14,
+                fontWeight: FontWeight.w300,
+                fontStyle: FontStyle.normal,
+                letterSpacing: 0,
               ),
             ),
-            InkWell(
-              onTap: () {},
-              child: Container(
-                height: 25,
-                width: 100,
-                color: Colors.black45,
-              ),
-            ),
-          ],
-        ),
-        Center(child: out)
-      ],
-    );
+          ),
+        ));
   }
 }
-
-//BlocProvider.of<SwPageCubit>(context).togglePage(page);
-// BlocPageRebuild blocPageRebuild = BlocProvider.of<BlocPageRebuild>(context).rebuildPage();

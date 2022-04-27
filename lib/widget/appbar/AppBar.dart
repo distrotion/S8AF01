@@ -91,8 +91,8 @@ class Logo1 extends StatelessWidget {
       padding: const EdgeInsets.only(left: 25),
       child: Container(
         color: Color(0xff0b1327),
-        child: Text(
-          "Thaiparker",
+        child: const Text(
+          "SOI8 STAFF",
           style: TextStyle(
             fontFamily: 'Mitr',
             color: Colors.white,

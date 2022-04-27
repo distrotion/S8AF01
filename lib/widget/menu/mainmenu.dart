@@ -74,30 +74,30 @@ class Data_Menu_mainmenu extends StatelessWidget {
                   ),
                 ))),
         menu_normal(
-          name: "Page1",
+          name: "Register Order",
           page: Page1(),
           Lv: 1,
         ),
         menu_normal(
-          name: "Page2",
+          name: "Order List",
           page: Page2(),
           Lv: 1,
         ),
         menu_normal(
-          name: "Page3",
+          name: "DATA INPUT",
           page: Page3(),
           Lv: 1,
         ),
-        menu_normal(
-          name: "Page4",
-          page: Page4(),
-          Lv: 1,
-        ),
-        menu_normal(
-          name: "Page5",
-          page: Page5(),
-          Lv: 5,
-        ),
+        // menu_normal(
+        //   name: "Page4",
+        //   page: Page4(),
+        //   Lv: 1,
+        // ),
+        // menu_normal(
+        //   name: "Page5",
+        //   page: Page5(),
+        //   Lv: 5,
+        // ),
         menu_logout(
           name: "Logout",
         ),

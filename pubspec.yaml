@@ -1,4 +1,4 @@
-name: tpk_soi8_af_01
+name: tpk_soi8_staff
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -37,6 +37,7 @@ dependencies:
   flutter_bloc: ^8.0.1
   shared_preferences: ^2.0.13
   intl: ^0.17.0
+  dio: ^4.0.6
 
 dev_dependencies:
   flutter_test:
