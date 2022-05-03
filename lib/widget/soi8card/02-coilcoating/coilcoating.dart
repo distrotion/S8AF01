@@ -11,7 +11,7 @@ class COILCOATINGcardBODY extends StatelessWidget {
     this.PO,
     this.MATCP,
     this.status,
-    this.SendToAPP,
+    required this.SendToAPP,
     //
     this.COLORch,
     this.APPEARANCEch,
@@ -32,7 +32,7 @@ class COILCOATINGcardBODY extends StatelessWidget {
   String? PO;
   String? MATCP;
   String? status;
-  Function? SendToAPP;
+  Function SendToAPP;
   //--------------
   bool? COLORch;
   bool? APPEARANCEch;
@@ -119,7 +119,7 @@ class COILCOATINGcardBODY extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  SendToAPP ?? () {};
+                  SendToAPP('${PO}-${_MATCP}');
                 },
                 child: Container(
                   height: 40,
