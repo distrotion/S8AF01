@@ -42,6 +42,7 @@ class _ProgressBodyState extends State<ProgressBody> {
           Widget inList = PREMIXcardBODY(
             PO: _data[i].PO,
             MATCP: _data[i].MATNO,
+            status: _data[i].SumStatus,
             //-------------------------------------------
             COLORch: _data[i].COLOR.active,
             COLORdata: _data[i].COLOR.active
@@ -50,6 +51,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].COLOR.T2,
                     value03: _data[i].COLOR.T3,
                     value04: _data[i].COLOR.AllSt,
+                    coValue04: _data[i].COLOR.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].COLOR.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -60,6 +66,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].APPEARANCE.T2,
                     value03: _data[i].APPEARANCE.T3,
                     value04: _data[i].APPEARANCE.AllSt,
+                    coValue04: _data[i].APPEARANCE.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].APPEARANCE.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -70,6 +81,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].SG.T2,
                     value03: _data[i].SG.T3,
                     value04: _data[i].SG.AllSt,
+                    coValue04: _data[i].SG.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].SG.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -80,6 +96,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].FA.T2,
                     value03: _data[i].FA.T3,
                     value04: _data[i].FA.AllSt,
+                    coValue04: _data[i].FA.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].FA.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -90,6 +111,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].TA.T2,
                     value03: _data[i].TA.T3,
                     value04: _data[i].TA.AllSt,
+                    coValue04: _data[i].TA.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].TA.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -100,6 +126,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].ZN.T2,
                     value03: _data[i].ZN.T3,
                     value04: _data[i].ZN.AllSt,
+                    coValue04: _data[i].ZN.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].ZN.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -110,6 +141,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].NI.T2,
                     value03: _data[i].NI.T3,
                     value04: _data[i].NI.AllSt,
+                    coValue04: _data[i].NI.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].NI.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -120,6 +156,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].MN.T2,
                     value03: _data[i].MN.T3,
                     value04: _data[i].MN.AllSt,
+                    coValue04: _data[i].MN.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].MN.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -137,6 +178,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].COLOR.T2,
                     value03: _data[i].COLOR.T3,
                     value04: _data[i].COLOR.AllSt,
+                    coValue04: _data[i].COLOR.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].COLOR.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -147,6 +193,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].APPEARANCE.T2,
                     value03: _data[i].APPEARANCE.T3,
                     value04: _data[i].APPEARANCE.AllSt,
+                    coValue04: _data[i].APPEARANCE.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].APPEARANCE.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -157,6 +208,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].SG.T2,
                     value03: _data[i].SG.T3,
                     value04: _data[i].SG.AllSt,
+                    coValue04: _data[i].SG.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].SG.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -167,6 +223,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].PH.T2,
                     value03: _data[i].PH.T3,
                     value04: _data[i].PH.AllSt,
+                    coValue04: _data[i].PH.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].PH.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -177,6 +238,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].NVC.T2,
                     value03: _data[i].NVC.T3,
                     value04: _data[i].NVC.AllSt,
+                    coValue04: _data[i].NVC.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].NVC.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -187,6 +253,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].T_Al.T2,
                     value03: _data[i].T_Al.T3,
                     value04: _data[i].T_Al.AllSt,
+                    coValue04: _data[i].T_Al.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].T_Al.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -197,6 +268,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].TA.T2,
                     value03: _data[i].TA.T3,
                     value04: _data[i].TA.AllSt,
+                    coValue04: _data[i].TA.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].TA.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -214,6 +290,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].COLOR.T2,
                     value03: _data[i].COLOR.T3,
                     value04: _data[i].COLOR.AllSt,
+                    coValue04: _data[i].COLOR.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].COLOR.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -224,6 +305,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].APPEARANCE.T2,
                     value03: _data[i].APPEARANCE.T3,
                     value04: _data[i].APPEARANCE.AllSt,
+                    coValue04: _data[i].APPEARANCE.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].APPEARANCE.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -234,6 +320,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].SG.T2,
                     value03: _data[i].SG.T3,
                     value04: _data[i].SG.AllSt,
+                    coValue04: _data[i].SG.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].SG.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -244,6 +335,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].PH.T2,
                     value03: _data[i].PH.T3,
                     value04: _data[i].PH.AllSt,
+                    coValue04: _data[i].PH.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].PH.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -254,6 +350,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].CR3.T2,
                     value03: _data[i].CR3.T3,
                     value04: _data[i].CR3.AllSt,
+                    coValue04: _data[i].CR3.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].CR3.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -264,6 +365,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].TCr.T2,
                     value03: _data[i].TCr.T3,
                     value04: _data[i].TCr.AllSt,
+                    coValue04: _data[i].TCr.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].TCr.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -274,6 +380,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].Brix.T2,
                     value03: _data[i].Brix.T3,
                     value04: _data[i].Brix.AllSt,
+                    coValue04: _data[i].Brix.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].Brix.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -284,6 +395,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].ZR.T2,
                     value03: _data[i].ZR.T3,
                     value04: _data[i].ZR.AllSt,
+                    coValue04: _data[i].ZR.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].ZR.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -301,6 +417,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].COLOR.T2,
                     value03: _data[i].COLOR.T3,
                     value04: _data[i].COLOR.AllSt,
+                    coValue04: _data[i].COLOR.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].COLOR.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -311,6 +432,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].APPEARANCE.T2,
                     value03: _data[i].APPEARANCE.T3,
                     value04: _data[i].APPEARANCE.AllSt,
+                    coValue04: _data[i].APPEARANCE.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].APPEARANCE.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -321,6 +447,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].TC.T2,
                     value03: _data[i].TC.T3,
                     value04: _data[i].TC.AllSt,
+                    coValue04: _data[i].TC.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].TC.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -331,6 +462,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].THOP.T2,
                     value03: _data[i].THOP.T3,
                     value04: _data[i].THOP.AllSt,
+                    coValue04: _data[i].THOP.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].THOP.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -341,6 +477,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].FHOP.T2,
                     value03: _data[i].FHOP.T3,
                     value04: _data[i].FHOP.AllSt,
+                    coValue04: _data[i].FHOP.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].FHOP.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -351,6 +492,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].FT.T2,
                     value03: _data[i].FT.T3,
                     value04: _data[i].FT.AllSt,
+                    coValue04: _data[i].FA.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].FT.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -361,6 +507,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].PaticleSize.T2,
                     value03: _data[i].PaticleSize.T3,
                     value04: _data[i].PaticleSize.AllSt,
+                    coValue04: _data[i].PaticleSize.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].PaticleSize.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -371,6 +522,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].NVC.T2,
                     value03: _data[i].NVC.T3,
                     value04: _data[i].NVC.AllSt,
+                    coValue04: _data[i].NVC.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].NVC.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -388,6 +544,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].COLOR.T2,
                     value03: _data[i].COLOR.T3,
                     value04: _data[i].COLOR.AllSt,
+                    coValue04: _data[i].COLOR.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].COLOR.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -398,6 +559,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].APPEARANCE.T2,
                     value03: _data[i].APPEARANCE.T3,
                     value04: _data[i].APPEARANCE.AllSt,
+                    coValue04: _data[i].APPEARANCE.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].APPEARANCE.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -408,6 +574,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].SG.T2,
                     value03: _data[i].SG.T3,
                     value04: _data[i].SG.AllSt,
+                    coValue04: _data[i].SG.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].SG.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -418,6 +589,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].TA.T2,
                     value03: _data[i].TA.T3,
                     value04: _data[i].TA.AllSt,
+                    coValue04: _data[i].TA.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].TA.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -428,6 +604,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].T_Al.T2,
                     value03: _data[i].T_Al.T3,
                     value04: _data[i].T_Al.AllSt,
+                    coValue04: _data[i].T_Al.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].T_Al.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -438,6 +619,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].PH.T2,
                     value03: _data[i].PH.T3,
                     value04: _data[i].PH.AllSt,
+                    coValue04: _data[i].PH.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].COLOR.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -448,6 +634,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].FACTOR.T2,
                     value03: _data[i].FACTOR.T3,
                     value04: _data[i].FACTOR.AllSt,
+                    coValue04: _data[i].FACTOR.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].FACTOR.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -458,6 +649,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].ACO.T2,
                     value03: _data[i].ACO.T3,
                     value04: _data[i].ACO.AllSt,
+                    coValue04: _data[i].ACO.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].ACO.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -475,6 +671,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].COLOR.T2,
                     value03: _data[i].COLOR.T3,
                     value04: _data[i].COLOR.AllSt,
+                    coValue04: _data[i].COLOR.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].COLOR.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -485,6 +686,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].APPEARANCE.T2,
                     value03: _data[i].APPEARANCE.T3,
                     value04: _data[i].APPEARANCE.AllSt,
+                    coValue04: _data[i].APPEARANCE.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].APPEARANCE.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -495,6 +701,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].SG.T2,
                     value03: _data[i].SG.T3,
                     value04: _data[i].SG.AllSt,
+                    coValue04: _data[i].SG.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].SG.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -505,6 +716,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].TA.T2,
                     value03: _data[i].TA.T3,
                     value04: _data[i].TA.AllSt,
+                    coValue04: _data[i].TA.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].TA.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -515,6 +731,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].T_Al.T2,
                     value03: _data[i].T_Al.T3,
                     value04: _data[i].T_Al.AllSt,
+                    coValue04: _data[i].T_Al.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].T_Al.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -525,6 +746,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].PH.T2,
                     value03: _data[i].PH.T3,
                     value04: _data[i].PH.AllSt,
+                    coValue04: _data[i].PH.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].PH.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -535,6 +761,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].FACTOR.T2,
                     value03: _data[i].FACTOR.T3,
                     value04: _data[i].FACTOR.AllSt,
+                    coValue04: _data[i].FACTOR.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].FACTOR.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -545,6 +776,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].ACO.T2,
                     value03: _data[i].ACO.T3,
                     value04: _data[i].ACO.AllSt,
+                    coValue04: _data[i].ACO.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].ACO.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -562,6 +798,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].COLOR.T2,
                     value03: _data[i].COLOR.T3,
                     value04: _data[i].COLOR.AllSt,
+                    coValue04: _data[i].COLOR.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].COLOR.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -572,6 +813,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].APPEARANCE.T2,
                     value03: _data[i].APPEARANCE.T3,
                     value04: _data[i].APPEARANCE.AllSt,
+                    coValue04: _data[i].APPEARANCE.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].APPEARANCE.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -582,6 +828,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].SG.T2,
                     value03: _data[i].SG.T3,
                     value04: _data[i].SG.AllSt,
+                    coValue04: _data[i].SG.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].SG.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -592,6 +843,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].FA.T2,
                     value03: _data[i].FA.T3,
                     value04: _data[i].FA.AllSt,
+                    coValue04: _data[i].FA.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].FA.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -602,6 +858,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].TA.T2,
                     value03: _data[i].TA.T3,
                     value04: _data[i].TA.AllSt,
+                    coValue04: _data[i].TA.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].TA.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -612,6 +873,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].F_Al.T2,
                     value03: _data[i].F_Al.T3,
                     value04: _data[i].F_Al.AllSt,
+                    coValue04: _data[i].F_Al.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].F_Al.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -622,6 +888,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].T_Al.T2,
                     value03: _data[i].T_Al.T3,
                     value04: _data[i].T_Al.AllSt,
+                    coValue04: _data[i].T_Al.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].T_Al.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -632,6 +903,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].ACO.T2,
                     value03: _data[i].ACO.T3,
                     value04: _data[i].ACO.AllSt,
+                    coValue04: _data[i].ACO.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].ACO.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -642,6 +918,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].PH.T2,
                     value03: _data[i].PH.T3,
                     value04: _data[i].PH.AllSt,
+                    coValue04: _data[i].PH.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].PH.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -652,6 +933,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].CR6.T2,
                     value03: _data[i].CR6.T3,
                     value04: _data[i].CR6.AllSt,
+                    coValue04: _data[i].CR6.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].CR6.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -662,6 +948,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].BABCOCK.T2,
                     value03: _data[i].BABCOCK.T3,
                     value04: _data[i].BABCOCK.AllSt,
+                    coValue04: _data[i].BABCOCK.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].BABCOCK.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -679,6 +970,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].COLOR.T2,
                     value03: _data[i].COLOR.T3,
                     value04: _data[i].COLOR.AllSt,
+                    coValue04: _data[i].COLOR.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].COLOR.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -689,6 +985,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].APPEARANCE.T2,
                     value03: _data[i].APPEARANCE.T3,
                     value04: _data[i].APPEARANCE.AllSt,
+                    coValue04: _data[i].APPEARANCE.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].APPEARANCE.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -699,6 +1000,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].SG.T2,
                     value03: _data[i].SG.T3,
                     value04: _data[i].SG.AllSt,
+                    coValue04: _data[i].SG.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].SG.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -709,6 +1015,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].FA.T2,
                     value03: _data[i].FA.T3,
                     value04: _data[i].FA.AllSt,
+                    coValue04: _data[i].FA.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].FA.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -719,6 +1030,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].TA.T2,
                     value03: _data[i].TA.T3,
                     value04: _data[i].TA.AllSt,
+                    coValue04: _data[i].TA.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].TA.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -729,6 +1045,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].F_Al.T2,
                     value03: _data[i].F_Al.T3,
                     value04: _data[i].F_Al.AllSt,
+                    coValue04: _data[i].F_Al.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].F_Al.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -739,6 +1060,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].T_Al.T2,
                     value03: _data[i].T_Al.T3,
                     value04: _data[i].T_Al.AllSt,
+                    coValue04: _data[i].T_Al.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].T_Al.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -749,6 +1075,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].PH.T2,
                     value03: _data[i].PH.T3,
                     value04: _data[i].PH.AllSt,
+                    coValue04: _data[i].PH.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].PH.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -759,6 +1090,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].AL.T2,
                     value03: _data[i].AL.T3,
                     value04: _data[i].AL.AllSt,
+                    coValue04: _data[i].AL.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].AL.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -769,6 +1105,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].CE.T2,
                     value03: _data[i].CE.T3,
                     value04: _data[i].CE.AllSt,
+                    coValue04: _data[i].CE.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].CE.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -779,6 +1120,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].CR6.T2,
                     value03: _data[i].CR6.T3,
                     value04: _data[i].CR6.AllSt,
+                    coValue04: _data[i].CR6.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].CR6.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -789,6 +1135,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].TCr.T2,
                     value03: _data[i].TCr.T3,
                     value04: _data[i].TCr.AllSt,
+                    coValue04: _data[i].TCr.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].TCr.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -799,6 +1150,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].MN.T2,
                     value03: _data[i].MN.T3,
                     value04: _data[i].MN.AllSt,
+                    coValue04: _data[i].MN.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].MN.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -809,6 +1165,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].NI.T2,
                     value03: _data[i].NI.T3,
                     value04: _data[i].NI.AllSt,
+                    coValue04: _data[i].NI.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].NI.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -819,6 +1180,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].NVC.T2,
                     value03: _data[i].NVC.T3,
                     value04: _data[i].NVC.AllSt,
+                    coValue04: _data[i].NVC.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].NVC.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -829,6 +1195,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].Starch.T2,
                     value03: _data[i].Starch.T3,
                     value04: _data[i].Starch.AllSt,
+                    coValue04: _data[i].Starch.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].Starch.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -839,6 +1210,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].V.T2,
                     value03: _data[i].V.T3,
                     value04: _data[i].V.AllSt,
+                    coValue04: _data[i].V.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].V.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -849,6 +1225,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].ZN.T2,
                     value03: _data[i].ZN.T3,
                     value04: _data[i].ZN.AllSt,
+                    coValue04: _data[i].ZN.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].ZN.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -859,6 +1240,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].ZR.T2,
                     value03: _data[i].ZR.T3,
                     value04: _data[i].ZR.AllSt,
+                    coValue04: _data[i].ZR.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].ZR.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -869,6 +1255,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].Viscosity.T2,
                     value03: _data[i].Viscosity.T3,
                     value04: _data[i].Viscosity.AllSt,
+                    coValue04: _data[i].Viscosity.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].Viscosity.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -879,6 +1270,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].TI.T2,
                     value03: _data[i].TI.T3,
                     value04: _data[i].TI.AllSt,
+                    coValue04: _data[i].TI.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].TI.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -889,6 +1285,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].FE.T2,
                     value03: _data[i].FE.T3,
                     value04: _data[i].FE.AllSt,
+                    coValue04: _data[i].FE.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].FE.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------
@@ -899,6 +1300,11 @@ class _ProgressBodyState extends State<ProgressBody> {
                     value02: _data[i].RP.T2,
                     value03: _data[i].RP.T3,
                     value04: _data[i].RP.AllSt,
+                    coValue04: _data[i].RP.AllSt == 'PASS'
+                        ? Colors.green
+                        : _data[i].RP.AllSt == 'REJECT'
+                            ? Colors.red
+                            : const Color.fromARGB(255, 163, 163, 10),
                   )
                 : s8cardvalue(),
             //-------------------------------------------

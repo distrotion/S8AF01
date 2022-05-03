@@ -111,9 +111,9 @@ class TRITRATINGcardBODY extends StatelessWidget {
                   ),
                   border: Border.all(color: Colors.black, width: 2),
                 ),
-                child: const Center(
+                child: Center(
                   child: Text(
-                    "Status",
+                    status ?? '',
                     style: TextStyle(fontSize: 15),
                   ),
                 ),

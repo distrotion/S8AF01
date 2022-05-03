@@ -376,6 +376,7 @@ class _DATAINPUTBoxState extends State<DATAINPUTBox> {
                         listdropdown: dropdown01.CO,
                         onChangeinside: (input) {
                           setState(() {
+                            valueinput.item = 'COLOR';
                             valueinput.value = input;
                           });
                         },
@@ -430,6 +431,7 @@ class _DATAINPUTBoxState extends State<DATAINPUTBox> {
                           listdropdown: dropdown01.AP,
                           onChangeinside: (input) {
                             setState(() {
+                              valueinput.item = 'APPEARANCE';
                               valueinput.value = input;
                             });
                           },

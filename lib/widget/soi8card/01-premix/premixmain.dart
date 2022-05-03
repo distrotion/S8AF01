@@ -56,6 +56,7 @@ class PREMIXcardBODY extends StatelessWidget {
   Widget build(BuildContext context) {
     String _PO = PO ?? 'XXXXXXXXXX';
     String _MATCP = MATCP ?? 'YYYYYYYYYY';
+
     return Column(
       children: [
         Container(
@@ -108,9 +109,9 @@ class PREMIXcardBODY extends StatelessWidget {
                   ),
                   border: Border.all(color: Colors.black, width: 2),
                 ),
-                child: const Center(
+                child: Center(
                   child: Text(
-                    "Status",
+                    status ?? '',
                     style: TextStyle(fontSize: 15),
                   ),
                 ),
