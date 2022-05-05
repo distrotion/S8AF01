@@ -28,6 +28,8 @@ class COILCOATINGcardBODY extends StatelessWidget {
     this.NVCdata,
     this.TALdata,
     this.TAdata,
+    this.APPstr,
+    this.coAPPstr,
   }) : super(key: key);
   String? PO;
   String? MATCP;
@@ -50,6 +52,9 @@ class COILCOATINGcardBODY extends StatelessWidget {
   s8cardvalue? NVCdata;
   s8cardvalue? TALdata;
   s8cardvalue? TAdata;
+//--------------
+  String? APPstr;
+  Color? coAPPstr;
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +70,7 @@ class COILCOATINGcardBODY extends StatelessWidget {
                 topLeft: Radius.circular(5), topRight: Radius.circular(5)),
             border: Border.all(color: Colors.black, width: 1),
           ),
-          width: 700,
+          width: 2000,
           height: 50,
           child: Row(
             children: [
@@ -125,15 +130,15 @@ class COILCOATINGcardBODY extends StatelessWidget {
                   height: 40,
                   width: 100,
                   decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: coAPPstr ?? Colors.green,
                     borderRadius: const BorderRadius.all(
                       Radius.circular(8),
                     ),
                     border: Border.all(color: Colors.black, width: 2),
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "SEND FOR\nAPPROVE",
+                      APPstr ?? "SEND FOR\nAPPROVE",
                       style: TextStyle(fontSize: 12, color: Colors.white),
                     ),
                   ),
@@ -151,11 +156,11 @@ class COILCOATINGcardBODY extends StatelessWidget {
             color: Colors.grey,
             border: Border.all(color: Colors.black, width: 1),
           ),
-          width: 700,
+          width: 2000,
           // height: 100,\
           child: Center(
             child: SizedBox(
-              width: 660,
+              width: 2000,
               child: Wrap(
                 children: [
                   COLORch ?? false

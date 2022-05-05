@@ -6,7 +6,7 @@ import '../../page/page1.dart';
 import '../Cubit/NotificationEvent.dart';
 
 //-------------------------------------------------
-String server = 'http://127.0.0.1:9210/';
+String server = 'http://127.0.0.1:15000/';
 
 abstract class RegisterPOID_Event {}
 

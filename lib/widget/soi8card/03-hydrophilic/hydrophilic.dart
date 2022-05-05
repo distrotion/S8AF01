@@ -30,6 +30,8 @@ class HYDROPHILICcardBODY extends StatelessWidget {
     this.TCrdata,
     this.BRIXCdata,
     this.ZRdata,
+    this.APPstr,
+    this.coAPPstr,
   }) : super(key: key);
   String? PO;
   String? MATCP;
@@ -55,6 +57,9 @@ class HYDROPHILICcardBODY extends StatelessWidget {
   s8cardvalue? BRIXCdata;
   s8cardvalue? ZRdata;
 
+//--------------
+  String? APPstr;
+  Color? coAPPstr;
   @override
   Widget build(BuildContext context) {
     String _PO = PO ?? 'XXXXXXXXXX';
@@ -129,15 +134,15 @@ class HYDROPHILICcardBODY extends StatelessWidget {
                   height: 40,
                   width: 100,
                   decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: coAPPstr ?? Colors.green,
                     borderRadius: const BorderRadius.all(
                       Radius.circular(8),
                     ),
                     border: Border.all(color: Colors.black, width: 2),
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "SEND FOR\nAPPROVE",
+                      APPstr ?? "SEND FOR\nAPPROVE",
                       style: TextStyle(fontSize: 12, color: Colors.white),
                     ),
                   ),

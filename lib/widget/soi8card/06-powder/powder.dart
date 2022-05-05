@@ -36,6 +36,8 @@ class POWDERcardBODY extends StatelessWidget {
     this.PHdata,
     this.CR6data,
     this.BABCOCKdata,
+    this.APPstr,
+    this.coAPPstr,
   }) : super(key: key);
   String? PO;
   String? MATCP;
@@ -66,6 +68,9 @@ class POWDERcardBODY extends StatelessWidget {
   s8cardvalue? PHdata;
   s8cardvalue? CR6data;
   s8cardvalue? BABCOCKdata;
+  //--------------
+  String? APPstr;
+  Color? coAPPstr;
 
   @override
   Widget build(BuildContext context) {
@@ -141,15 +146,15 @@ class POWDERcardBODY extends StatelessWidget {
                   height: 40,
                   width: 100,
                   decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: coAPPstr ?? Colors.green,
                     borderRadius: const BorderRadius.all(
                       Radius.circular(8),
                     ),
                     border: Border.all(color: Colors.black, width: 2),
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "SEND FOR\nAPPROVE",
+                      APPstr ?? "SEND FOR\nAPPROVE",
                       style: TextStyle(fontSize: 12, color: Colors.white),
                     ),
                   ),

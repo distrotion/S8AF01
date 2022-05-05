@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tpk_soi8_staff/widget/common/Loading.dart';
 
 import '../../bloc/BlocEvent/01-getstaffdata.dart';
+import '../../data/global.dart';
 import '../../data/model.dart';
 import '../../widget/soi8card/01-premix/premixmain.dart';
 import '../../widget/soi8card/02-coilcoating/coilcoating.dart';
@@ -37,9 +38,17 @@ class _ProgressBodyState extends State<ProgressBody> {
     List<unitdata> _data = widget.data ?? [];
     List<Widget> IPdata = [
       //
+      const SizedBox(
+        height: 15,
+      ),
       Container(
         width: 700,
         height: 50,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: Colors.black, width: 2),
+        ),
         child: Row(
           children: [
             const Spacer(),
@@ -55,9 +64,15 @@ class _ProgressBodyState extends State<ProgressBody> {
                 color: Colors.white,
               ),
             ),
+            const SizedBox(
+              width: 10,
+            ),
           ],
         ),
-      )
+      ),
+      const SizedBox(
+        height: 15,
+      ),
     ];
 
     if (_data.length > 0) {
@@ -65,12 +80,18 @@ class _ProgressBodyState extends State<ProgressBody> {
         if (_data[i].PLANT == 'PREMIX') {
           Widget inList = PREMIXcardBODY(
             SendToAPP: (input) {
-              print(input);
-              print(_data[i].POID);
+              if (_data[i].SumStatus == 'ALL-PASS') {
+                ACCEPTION.poid = _data[i].POID;
+                ACCEPTION.plant = 'PREMIX';
+                context.read<GETSTAFFDATABloc>().add(SENDTOMANA());
+              }
             },
             PO: _data[i].PO,
             MATCP: _data[i].MATNO,
             status: _data[i].SumStatus,
+            coAPPstr: _data[i].SumStatus == 'ALL-PASS'
+                ? Colors.green
+                : const Color.fromARGB(255, 230, 210, 33),
             //-------------------------------------------
             COLORch: _data[i].COLOR.active,
             COLORdata: _data[i].COLOR.active
@@ -317,11 +338,18 @@ class _ProgressBodyState extends State<ProgressBody> {
         } else if (_data[i].PLANT == 'COILCOATING') {
           Widget inList = COILCOATINGcardBODY(
             SendToAPP: (input) {
-              print(input);
-              print(_data[i].POID);
+              if (_data[i].SumStatus == 'ALL-PASS') {
+                ACCEPTION.poid = _data[i].POID;
+                ACCEPTION.plant = 'COILCOATING';
+                context.read<GETSTAFFDATABloc>().add(SENDTOMANA());
+              }
             },
             PO: _data[i].PO,
             MATCP: _data[i].MATNO,
+            status: _data[i].SumStatus,
+            coAPPstr: _data[i].SumStatus == 'ALL-PASS'
+                ? Colors.green
+                : const Color.fromARGB(255, 230, 210, 33),
             //-------------------------------------------
             COLORch: _data[i].COLOR.active,
             COLORdata: _data[i].COLOR.active
@@ -538,11 +566,18 @@ class _ProgressBodyState extends State<ProgressBody> {
         } else if (_data[i].PLANT == 'HYDROPHILIC') {
           Widget inList = HYDROPHILICcardBODY(
             SendToAPP: (input) {
-              print(input);
-              print(_data[i].POID);
+              if (_data[i].SumStatus == 'ALL-PASS') {
+                ACCEPTION.poid = _data[i].POID;
+                ACCEPTION.plant = 'HYDROPHILIC';
+                context.read<GETSTAFFDATABloc>().add(SENDTOMANA());
+              }
             },
             PO: _data[i].PO,
             MATCP: _data[i].MATNO,
+            status: _data[i].SumStatus,
+            coAPPstr: _data[i].SumStatus == 'ALL-PASS'
+                ? Colors.green
+                : const Color.fromARGB(255, 230, 210, 33),
             //-------------------------------------------
             COLORch: _data[i].COLOR.active,
             COLORdata: _data[i].COLOR.active
@@ -789,11 +824,18 @@ class _ProgressBodyState extends State<ProgressBody> {
         } else if (_data[i].PLANT == 'PLX') {
           Widget inList = PLXcardBODY(
             SendToAPP: (input) {
-              print(input);
-              print(_data[i].POID);
+              if (_data[i].SumStatus == 'ALL-PASS') {
+                ACCEPTION.poid = _data[i].POID;
+                ACCEPTION.plant = 'PLX';
+                context.read<GETSTAFFDATABloc>().add(SENDTOMANA());
+              }
             },
             PO: _data[i].PO,
             MATCP: _data[i].MATNO,
+            status: _data[i].SumStatus,
+            coAPPstr: _data[i].SumStatus == 'ALL-PASS'
+                ? Colors.green
+                : const Color.fromARGB(255, 230, 210, 33),
             //-------------------------------------------
             COLORch: _data[i].COLOR.active,
             COLORdata: _data[i].COLOR.active
@@ -1040,11 +1082,18 @@ class _ProgressBodyState extends State<ProgressBody> {
         } else if (_data[i].PLANT == 'TRITRATING') {
           Widget inList = TRITRATINGcardBODY(
             SendToAPP: (input) {
-              print(input);
-              print(_data[i].POID);
+              if (_data[i].SumStatus == 'ALL-PASS') {
+                ACCEPTION.poid = _data[i].POID;
+                ACCEPTION.plant = 'TRITRATING';
+                context.read<GETSTAFFDATABloc>().add(SENDTOMANA());
+              }
             },
             PO: _data[i].PO,
             MATCP: _data[i].MATNO,
+            status: _data[i].SumStatus,
+            coAPPstr: _data[i].SumStatus == 'ALL-PASS'
+                ? Colors.green
+                : const Color.fromARGB(255, 230, 210, 33),
             //-------------------------------------------
             COLORch: _data[i].COLOR.active,
             COLORdata: _data[i].COLOR.active
@@ -1221,257 +1270,6 @@ class _ProgressBodyState extends State<ProgressBody> {
                     coValue04: _data[i].PH.AllSt == 'PASS'
                         ? Colors.green
                         : _data[i].COLOR.AllSt == 'REJECT'
-                            ? Colors.red
-                            : const Color.fromARGB(255, 163, 163, 10),
-                  )
-                : s8cardvalue(),
-            //-------------------------------------------
-            FACTORch: _data[i].FACTOR.active,
-            FACTORdata: _data[i].FACTOR.active
-                ? s8cardvalue(
-                    value01: _data[i].FACTOR.T1,
-                    value02: _data[i].FACTOR.T2,
-                    value03: _data[i].FACTOR.T3,
-                    value04: _data[i].FACTOR.AllSt,
-                    coValue01: _data[i].FACTOR.T1St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].FACTOR.T1St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue02: _data[i].FACTOR.T2St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].FACTOR.T2St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue03: _data[i].FACTOR.T3St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].FACTOR.T3St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue04: _data[i].FACTOR.AllSt == 'PASS'
-                        ? Colors.green
-                        : _data[i].FACTOR.AllSt == 'REJECT'
-                            ? Colors.red
-                            : const Color.fromARGB(255, 163, 163, 10),
-                  )
-                : s8cardvalue(),
-            //-------------------------------------------
-            ACOch: _data[i].ACO.active,
-            ACOdata: _data[i].ACO.active
-                ? s8cardvalue(
-                    value01: _data[i].ACO.T1,
-                    value02: _data[i].ACO.T2,
-                    value03: _data[i].ACO.T3,
-                    value04: _data[i].ACO.AllSt,
-                    coValue01: _data[i].ACO.T1St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].ACO.T1St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue02: _data[i].ACO.T2St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].ACO.T2St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue03: _data[i].ACO.T3St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].ACO.T3St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue04: _data[i].ACO.AllSt == 'PASS'
-                        ? Colors.green
-                        : _data[i].ACO.AllSt == 'REJECT'
-                            ? Colors.red
-                            : const Color.fromARGB(255, 163, 163, 10),
-                  )
-                : s8cardvalue(),
-            //-------------------------------------------
-          );
-          IPdata.add(inList);
-        } else if (_data[i].PLANT == 'TRITRATING') {
-          Widget inList = TRITRATINGcardBODY(
-            SendToAPP: (input) {
-              print(input);
-              print(_data[i].POID);
-            },
-            PO: _data[i].PO,
-            MATCP: _data[i].MATNO,
-            //-------------------------------------------
-            COLORch: _data[i].COLOR.active,
-            COLORdata: _data[i].COLOR.active
-                ? s8cardvalue(
-                    value01: _data[i].COLOR.T1,
-                    value02: _data[i].COLOR.T2,
-                    value03: _data[i].COLOR.T3,
-                    value04: _data[i].COLOR.AllSt,
-                    coValue01: _data[i].COLOR.T1St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].COLOR.T1St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue02: _data[i].COLOR.T2St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].COLOR.T2St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue03: _data[i].COLOR.T3St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].COLOR.T3St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue04: _data[i].COLOR.AllSt == 'PASS'
-                        ? Colors.green
-                        : _data[i].COLOR.AllSt == 'REJECT'
-                            ? Colors.red
-                            : const Color.fromARGB(255, 163, 163, 10),
-                  )
-                : s8cardvalue(),
-            //-------------------------------------------
-            APPEARANCEch: _data[i].APPEARANCE.active,
-            APPEARANCEdata: _data[i].APPEARANCE.active
-                ? s8cardvalue(
-                    value01: _data[i].APPEARANCE.T1,
-                    value02: _data[i].APPEARANCE.T2,
-                    value03: _data[i].APPEARANCE.T3,
-                    value04: _data[i].APPEARANCE.AllSt,
-                    coValue01: _data[i].APPEARANCE.T1St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].APPEARANCE.T1St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue02: _data[i].APPEARANCE.T2St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].APPEARANCE.T2St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue03: _data[i].APPEARANCE.T3St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].APPEARANCE.T3St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue04: _data[i].APPEARANCE.AllSt == 'PASS'
-                        ? Colors.green
-                        : _data[i].APPEARANCE.AllSt == 'REJECT'
-                            ? Colors.red
-                            : const Color.fromARGB(255, 163, 163, 10),
-                  )
-                : s8cardvalue(),
-            //-------------------------------------------
-            SGch: _data[i].SG.active,
-            SGdata: _data[i].SG.active
-                ? s8cardvalue(
-                    value01: _data[i].SG.T1,
-                    value02: _data[i].SG.T2,
-                    value03: _data[i].SG.T3,
-                    value04: _data[i].SG.AllSt,
-                    coValue01: _data[i].SG.T1St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].SG.T1St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue02: _data[i].SG.T2St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].SG.T2St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue03: _data[i].SG.T3St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].SG.T3St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue04: _data[i].SG.AllSt == 'PASS'
-                        ? Colors.green
-                        : _data[i].SG.AllSt == 'REJECT'
-                            ? Colors.red
-                            : const Color.fromARGB(255, 163, 163, 10),
-                  )
-                : s8cardvalue(),
-            //-------------------------------------------
-            TAch: _data[i].TA.active,
-            TAdata: _data[i].TA.active
-                ? s8cardvalue(
-                    value01: _data[i].TA.T1,
-                    value02: _data[i].TA.T2,
-                    value03: _data[i].TA.T3,
-                    value04: _data[i].TA.AllSt,
-                    coValue01: _data[i].TA.T1St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].TA.T1St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue02: _data[i].TA.T2St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].TA.T2St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue03: _data[i].TA.T3St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].TA.T3St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue04: _data[i].TA.AllSt == 'PASS'
-                        ? Colors.green
-                        : _data[i].TA.AllSt == 'REJECT'
-                            ? Colors.red
-                            : const Color.fromARGB(255, 163, 163, 10),
-                  )
-                : s8cardvalue(),
-            //-------------------------------------------
-            T_Alch: _data[i].T_Al.active,
-            T_Aldata: _data[i].T_Al.active
-                ? s8cardvalue(
-                    value01: _data[i].T_Al.T1,
-                    value02: _data[i].T_Al.T2,
-                    value03: _data[i].T_Al.T3,
-                    value04: _data[i].T_Al.AllSt,
-                    coValue01: _data[i].T_Al.T1St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].T_Al.T1St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue02: _data[i].T_Al.T2St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].T_Al.T2St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue03: _data[i].T_Al.T3St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].T_Al.T3St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue04: _data[i].T_Al.AllSt == 'PASS'
-                        ? Colors.green
-                        : _data[i].T_Al.AllSt == 'REJECT'
-                            ? Colors.red
-                            : const Color.fromARGB(255, 163, 163, 10),
-                  )
-                : s8cardvalue(),
-            //-------------------------------------------
-            PHch: _data[i].PH.active,
-            PHdata: _data[i].PH.active
-                ? s8cardvalue(
-                    value01: _data[i].PH.T1,
-                    value02: _data[i].PH.T2,
-                    value03: _data[i].PH.T3,
-                    value04: _data[i].PH.AllSt,
-                    coValue01: _data[i].PH.T1St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].PH.T1St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue02: _data[i].PH.T2St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].PH.T2St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue03: _data[i].PH.T3St == 'lightgreen'
-                        ? Colors.green
-                        : _data[i].PH.T3St == 'red'
-                            ? Colors.red
-                            : Colors.white,
-                    coValue04: _data[i].PH.AllSt == 'PASS'
-                        ? Colors.green
-                        : _data[i].PH.AllSt == 'REJECT'
                             ? Colors.red
                             : const Color.fromARGB(255, 163, 163, 10),
                   )
@@ -1542,11 +1340,18 @@ class _ProgressBodyState extends State<ProgressBody> {
         } else if (_data[i].PLANT == 'POWDER') {
           Widget inList = POWDERcardBODY(
             SendToAPP: (input) {
-              print(input);
-              print(_data[i].POID);
+              if (_data[i].SumStatus == 'ALL-PASS') {
+                ACCEPTION.poid = _data[i].POID;
+                ACCEPTION.plant = 'POWDER';
+                context.read<GETSTAFFDATABloc>().add(SENDTOMANA());
+              }
             },
             PO: _data[i].PO,
             MATCP: _data[i].MATNO,
+            status: _data[i].SumStatus,
+            coAPPstr: _data[i].SumStatus == 'ALL-PASS'
+                ? Colors.green
+                : const Color.fromARGB(255, 230, 210, 33),
             //-------------------------------------------
             COLORch: _data[i].COLOR.active,
             COLORdata: _data[i].COLOR.active
@@ -1883,11 +1688,18 @@ class _ProgressBodyState extends State<ProgressBody> {
         } else if (_data[i].PLANT == 'LIQUID') {
           Widget inList = LIQUIDcardBODY(
             SendToAPP: (input) {
-              print(input);
-              print(_data[i].POID);
+              if (_data[i].SumStatus == 'ALL-PASS') {
+                ACCEPTION.poid = _data[i].POID;
+                ACCEPTION.plant = 'LIQUID';
+                context.read<GETSTAFFDATABloc>().add(SENDTOMANA());
+              }
             },
             PO: _data[i].PO,
             MATCP: _data[i].MATNO,
+            status: _data[i].SumStatus,
+            coAPPstr: _data[i].SumStatus == 'ALL-PASS'
+                ? Colors.green
+                : const Color.fromARGB(255, 230, 210, 33),
             //-------------------------------------------
             COLORch: _data[i].COLOR.active,
             COLORdata: _data[i].COLOR.active

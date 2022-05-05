@@ -30,6 +30,8 @@ class TRITRATINGcardBODY extends StatelessWidget {
     this.PHdata,
     this.FACTORdata,
     this.ACOdata,
+    this.APPstr,
+    this.coAPPstr,
   }) : super(key: key);
   String? PO;
   String? MATCP;
@@ -54,6 +56,9 @@ class TRITRATINGcardBODY extends StatelessWidget {
   s8cardvalue? PHdata;
   s8cardvalue? FACTORdata;
   s8cardvalue? ACOdata;
+  //--------------
+  String? APPstr;
+  Color? coAPPstr;
 
   @override
   Widget build(BuildContext context) {
@@ -129,15 +134,15 @@ class TRITRATINGcardBODY extends StatelessWidget {
                   height: 40,
                   width: 100,
                   decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: coAPPstr ?? Colors.green,
                     borderRadius: const BorderRadius.all(
                       Radius.circular(8),
                     ),
                     border: Border.all(color: Colors.black, width: 2),
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "SEND FOR\nAPPROVE",
+                      APPstr ?? "SEND FOR\nAPPROVE",
                       style: TextStyle(fontSize: 12, color: Colors.white),
                     ),
                   ),

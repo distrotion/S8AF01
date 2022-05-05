@@ -34,9 +34,15 @@ class valueinput {
   static String value = '';
 }
 
+class ACCEPTION {
+  static String poid = '';
+  static String plant = '';
+}
+
 class dropdown01 {
   static List<String> CO = [''];
   static List<String> AP = [''];
+  static List<String> checklist = [''];
   static List<String> PREMIX = [''];
   static List<String> COILCOATING = [''];
   static List<String> HYDROPHILIC = [''];

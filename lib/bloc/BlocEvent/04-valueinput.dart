@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import '../../data/global.dart';
 //-------------------------------------------------
 
-String server = 'http://127.0.0.1:9210/';
+String server = 'http://127.0.0.1:15000/';
 
 abstract class VALUEINPUT_Event {}
 

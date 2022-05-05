@@ -62,6 +62,8 @@ class LIQUIDcardBODY extends StatelessWidget {
     this.Surfactantdata,
     this.FEdata,
     this.RPdata,
+    this.APPstr,
+    this.coAPPstr,
   }) : super(key: key);
   String? PO;
   String? MATCP;
@@ -118,6 +120,9 @@ class LIQUIDcardBODY extends StatelessWidget {
   s8cardvalue? Surfactantdata;
   s8cardvalue? FEdata;
   s8cardvalue? RPdata;
+  //--------------
+  String? APPstr;
+  Color? coAPPstr;
 
   @override
   Widget build(BuildContext context) {
@@ -193,15 +198,15 @@ class LIQUIDcardBODY extends StatelessWidget {
                   height: 40,
                   width: 100,
                   decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: coAPPstr ?? Colors.green,
                     borderRadius: const BorderRadius.all(
                       Radius.circular(8),
                     ),
                     border: Border.all(color: Colors.black, width: 2),
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "SEND FOR\nAPPROVE",
+                      APPstr ?? "SEND FOR\nAPPROVE",
                       style: TextStyle(fontSize: 12, color: Colors.white),
                     ),
                   ),

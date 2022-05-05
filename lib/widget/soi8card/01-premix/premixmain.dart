@@ -30,6 +30,8 @@ class PREMIXcardBODY extends StatelessWidget {
     this.ZNdata,
     this.NIdata,
     this.MNdata,
+    this.APPstr,
+    this.coAPPstr,
   }) : super(key: key);
   String? PO;
   String? MATCP;
@@ -51,6 +53,9 @@ class PREMIXcardBODY extends StatelessWidget {
   s8cardvalue? ZNdata;
   s8cardvalue? NIdata;
   s8cardvalue? MNdata;
+  //--------------
+  String? APPstr;
+  Color? coAPPstr;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +72,7 @@ class PREMIXcardBODY extends StatelessWidget {
                 topLeft: Radius.circular(5), topRight: Radius.circular(5)),
             border: Border.all(color: Colors.black, width: 1),
           ),
-          width: 700,
+          width: 2000,
           height: 50,
           child: Row(
             children: [
@@ -127,16 +132,16 @@ class PREMIXcardBODY extends StatelessWidget {
                   height: 40,
                   width: 100,
                   decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: coAPPstr ?? Colors.green,
                     borderRadius: const BorderRadius.all(
                       Radius.circular(8),
                     ),
                     border: Border.all(color: Colors.black, width: 2),
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "SEND FOR\nAPPROVE",
-                      style: TextStyle(fontSize: 12, color: Colors.white),
+                      APPstr ?? "SEND FOR\nAPPROVE",
+                      style: const TextStyle(fontSize: 12, color: Colors.white),
                     ),
                   ),
                 ),
@@ -153,11 +158,11 @@ class PREMIXcardBODY extends StatelessWidget {
             color: Colors.grey,
             border: Border.all(color: Colors.black, width: 1),
           ),
-          width: 700,
+          width: 2000,
           // height: 100,\
           child: Center(
             child: SizedBox(
-              width: 660,
+              width: 2000,
               child: Wrap(
                 children: [
                   COLORch ?? false

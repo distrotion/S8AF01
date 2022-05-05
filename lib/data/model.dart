@@ -281,3 +281,25 @@ class dropdown {
   List<String> POWDER;
   List<String> LIQUID;
 }
+
+class semiautoinputvalue {
+  semiautoinputvalue({
+    this.stc = '',
+    this.POID = '',
+    this.MATNO = '',
+    this.PO = '',
+    this.PLANT = '',
+    required this.checklist,
+    required this.CO,
+    required this.AP,
+  });
+
+  String stc;
+  String POID;
+  String MATNO;
+  String PO;
+  String PLANT;
+  List<String> checklist;
+  List<String> CO;
+  List<String> AP;
+}

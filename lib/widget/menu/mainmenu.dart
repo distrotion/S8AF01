@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../bloc/BlocEvent/LoginEvent.dart';
+import '../../data/global.dart';
 import '../../mainBody.dart';
 import '../../page/page1.dart';
 import '../../page/page2.dart';
